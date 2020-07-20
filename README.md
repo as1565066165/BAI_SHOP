@@ -2,9 +2,33 @@
 
 ​     
 
+## 一、项目简介
+
 项目简介：本项目采用前后端分离开发模式,vue_api_server是后端代码文件，vue_shop是前端代码文件
 
-### vue_api_server 文件说明
+| 前端项目技术栈 | 说明                                                         |
+| -------------- | ------------------------------------------------------------ |
+| Vue            | 一套构建用户界面的渐进式框架                                 |
+| Vue-router     | *vue-router是*vue.js官方路由管理器                           |
+| Element-UI     | *ElementUI* *Element*,一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的组件库,提供了配套设计资源,帮助你的网站快速成型 |
+| Axios          | axios是一个基于Promise的Http库，可以用在node.js环境和浏览器中 |
+| Echarts        | *ECharts*简单来说是互联网开发程序过程中,后台数据库用以实现数据到图形的映射的一个插件 |
+
+
+
+| 后端项目技术栈 | 说明                                                         |
+| :------------- | ------------------------------------------------------------ |
+| Node.js        | nodejs他是用C++开发的一种运行于服务器端的语言,可以写网站后台程序,可以做服务端应用开发 |
+| Express        | *Express 是*一个基于 Node.js 平台的极简、灵活的 web 应用开发框架,它提供一系列强大的特性,帮助你创建各种 Web 和移动设备应用 |
+| Jwt            | json web token 是为了在网络应用环境中传递声明而执行的一种基于json的开放标准 |
+| Mysql          | 数据库                                                       |
+| Sequelize      | Sequelize.js 提供对 MySQL，MariaDB，SQLite 和 PostgreSQL 数据库的简单访问，通过映射数据库条目到对象，或者对象到数据库条目。简而言之，就是 ORM（Object-Relational-Mapper）。Sequelize.js 完全是使用 JavaScript 编写，适用于 Node.js 的环境。 |
+
+
+
+## 二、文件说明
+
+### 1.vue_api_server 文件说明
 
 - `config` 配置文件目录
   - `default.json` 默认配置文件（其中包含数据库配置，jwt 配置）
@@ -25,7 +49,7 @@
 - `app.js` 主项目入口文件
 - `package.json` 项目配置文件
 
-### vue_shop 文件说明
+### 2.vue_shop 文件说明
 
 - `dist `文件夹 项目打包后生成的文件夹（用于生产环境）
   
@@ -55,4 +79,22 @@
   - `.prettierrc`：当我们使用右键格式化的时候,就会自动帮我们补全符号,但是,有些符号在eslint中就会报语法错误,那我们需要怎么办呢?可以通过.prettierrc来进行文件配置
   - `babel.config.js`：babel配置文件（*Babel 是*一个工具链,主要用于将 ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法,以便能够运行在当前和旧版本的浏览器或其他环境中）
 
+## 三、项目运行注意事项
 
+1.下载并解压   `BAI_SHOP.zip` 
+
+2.进入 `vue_api_server/db`  文件夹,将db文件夹下的  `mydb.sql`  数据库文件导入到mysql数据库中
+
+3.数据导入成功后,打开  `config`  文件夹中的  `default.json` 文件配置其中的  `db_config`
+
+4.打开doc命令窗口,进入  `vue_api_server ` 目录,运行  ` npm install`   命令加载项目所需的依赖
+
+5.依赖加载完毕之后执行  `nodemon app.js`  运行
+
+6.打开一个新的doc命令窗口,进入vue_shop目录,运行  ` npm install`   命令加载项目所需的依赖
+
+7.依赖加载完毕之后, 在当前窗口运行  `npm run serve`  命令运行项目,当提示 `Compiled successfully  in  xxxxms` ,打开浏览器访问  `localhost:8080`
+
+8.后记：一般来说项目就运行成功啦！注意：先要有nodejs环境哦！而且要全局安装nodemon依赖 代码：`npm install nodemon -g`
+
+如果想通过其他的方式来挂载项目，请看上面的**vue_shop文件说明**， dist文件夹就是vue项目打包之后的文件，只需将它挂载到服务器上即可
