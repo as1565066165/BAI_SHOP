@@ -79,7 +79,7 @@
 - `dist` 文件夹 `vue_shop` 打包的生产环境项目文件
 - 包含 `css`、`fonts`、`img`、`js`、`favicon.ico` 和 `index.html`
   - 运行项目时首先删除 `node_modules` 依赖包，然后在进入`vue_shop_server`目录，执行`npm install`重新下载新的依赖包
-  - 依赖包下载完成之后，在 doc 窗口执行命令`nodemon app.js` 并访问http://localhost:3000就能看到项目的前端页面了
+  - 依赖包下载完成之后，在 doc 窗口执行命令`nodemon app.js` 并访问`http://localhost:3000`就能看到项目的前端页面了
 - `app.js`文件 服务器运行入口文件，里面包含一些对服务器的基本配置
 
 ## 三、项目运行注意事项
